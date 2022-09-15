@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<root version="2.0">
+
+	<windowclass name="charsheet_skills1">
+		<placement>
+			<size>
+				<width>252</width>
+				<height>611</height>
+			</size>
+		</placement>
+		<nodelete />
+		<sheetdata>
+			<frame_char name="skillframe">
+				<bounds>15,90,465,500</bounds>
+			</frame_char>
+				
+			<stringcontrol>
+				<anchored>
+					<to>skillframe</to>
+					<position>insidetopleft</position>
+					<offset>100,9</offset>
+				</anchored>
+				<font>sheetlabelsmallbold</font>
+				<static>Kampf</static>
+			</stringcontrol>	
+			<stringcontrol>
+				<anchored>
+					<to>skillframe</to>
+					<position>insidetopleft</position>
+					<offset>300,9</offset>
+				</anchored>
+				<font>sheetlabelsmallbold</font>
+				<static>Körperlich</static>
+			</stringcontrol>			
+				
+			<stringcontrol>
+				<anchored>
+					<to>skillframe</to>
+					<position>insidetopleft</position>
+					<offset>23,29</offset>
+				</anchored>
+				<font>sheetlabelsmall</font>
+				<static>Name</static>
+			</stringcontrol>
+			
+			<stringcontrol>
+				<anchored>
+					<to>skillframe</to>
+					<position>insidetopleft</position>
+					<offset>108,29</offset>
+				</anchored>
+				<font>sheetlabelsmall</font>
+				<static>eBe</static>
+			</stringcontrol>
+			
+			<stringcontrol>
+				<anchored>
+					<to>skillframe</to>
+					<position>insidetopleft</position>
+					<offset>143,29</offset>
+				</anchored>
+				<font>sheetlabelsmall</font>
+				<static>At/Pa</static>
+			</stringcontrol>
+			
+			<stringcontrol>
+				<anchored>
+					<to>skillframe</to>
+					<position>insidetopleft</position>
+					<offset>183,29</offset>
+				</anchored>
+				<font>sheetlabelsmall</font>
+				<static>Wert</static>
+			</stringcontrol>
+			
+			<stringcontrol>
+				<anchored>
+					<to>skillframe</to>
+					<position>insidetopleft</position>
+					<offset>243,29</offset>
+				</anchored>
+				<font>sheetlabelsmall</font>
+				<static>Name</static>
+			</stringcontrol>
+			
+			<stringcontrol>
+				<anchored>
+					<to>skillframe</to>
+					<position>insidetopleft</position>
+					<offset>328,29</offset>
+				</anchored>
+				<font>sheetlabelsmall</font>
+				<static>eBe</static>
+			</stringcontrol>
+			
+			<stringcontrol>
+				<anchored>
+					<to>skillframe</to>
+					<position>insidetopleft</position>
+					<offset>363,29</offset>
+				</anchored>
+				<font>sheetlabelsmall</font>
+				<static>Probe</static>
+			</stringcontrol>
+			
+			<stringcontrol>
+				<anchored>
+					<to>skillframe</to>
+					<position>insidetopleft</position>
+					<offset>413,29</offset>
+				</anchored>
+				<font>sheetlabelsmall</font>
+				<static>Wert</static>
+			</stringcontrol>
+			
+			<windowlist name="skilllist_kampf">
+				<anchored>
+					<to>skillframe</to>
+					<position>over</position>
+					<offset>-8,-40</offset>
+				</anchored>
+				<datasource>.skilllist.kampf</datasource>
+				<class>charsheet_skilllistitem_kampf</class>
+				<allowcreate />
+				<allowdelete />				
+				<script file="campaign/scripts/char_skilllist_dsa.lua" />
+			</windowlist>	
+
+			<windowlist name="skilllist_koerper">
+				<anchored>
+					<to>skillframe</to>
+					<position>insidetopleft</position>
+					<offset>225,40</offset>
+				</anchored>
+				<datasource>.skilllist.koerper</datasource>
+				<class>charsheet_skilllistitem_koerper</class>
+				<allowcreate />
+				<allowdelete />								
+				<script file="campaign/scripts/char_skilllist_dsa.lua" />
+			</windowlist>				
+		</sheetdata>		
+	</windowclass>
+</root>

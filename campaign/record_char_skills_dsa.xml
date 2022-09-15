@@ -1,0 +1,538 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<root version="2.0">
+	<windowclass name="charsheet_skills">
+	<script file="campaign/scripts/char_skilllist_init_dsa.lua"/>
+		<placement>
+			<size width="525" height="611" />
+		</placement>
+		<nodelete />
+		<sheetdata>
+			<subwindow name="skills1">
+				<bounds>0,0,-1,-1</bounds>
+				<class>charsheet_skills1</class>
+			</subwindow>
+
+			<subwindow name="skills2">
+				<bounds>0,0,-1,-1</bounds>
+				<class>charsheet_skills2</class>
+			</subwindow>
+
+			<subwindow name="skills3">
+				<bounds>0,0,-1,-1</bounds>
+				<class>charsheet_skills3</class>
+			</subwindow>
+
+			<subwindow name="skills4">
+				<bounds>0,0,-1,-1</bounds>
+				<class>charsheet_skills4</class>
+			</subwindow>
+
+			<tabs_charsheet name="tabs">
+				<anchored width="18" height="92">
+					<top offset="0" />
+					<right offset="-20" />
+				</anchored>
+				<tab>
+					<icon>tab_skills_kampf</icon>
+					<subwindow>skills1</subwindow>
+				</tab>
+				<tab>
+					<icon>tab_skills_gesellschaft</icon>
+					<subwindow>skills2</subwindow>
+				</tab>
+				<tab>
+					<icon>tab_skills_wissen</icon>
+					<subwindow>skills3</subwindow>
+				</tab>
+				<tab>
+					<icon>tab_skills_handwerk</icon>
+					<subwindow>skills4</subwindow>
+				</tab>
+			</tabs_charsheet>
+
+			<frame_char name="attributframe">
+				<bounds>15,20,465,70</bounds>
+			</frame_char>
+
+			<number_charabilityscore name="mut" source="attribute.mut.aktuell">
+				<anchored>
+					<to>attributframe</to>
+					<position>insidetopleft</position>
+					<offset>15,33</offset>
+				</anchored>
+			</number_charabilityscore>
+			<label_fieldtop name="mut_label">
+				<anchored to="mut" />
+				<static textres="mu" />
+			</label_fieldtop>
+
+			<number_charabilityscore name="klugheit" source="attribute.klugheit.aktuell">
+				<anchored to="mut">
+					<top anchor="top" offset="0" />
+					<left anchor="right" relation="relative" offset="15" />
+				</anchored>
+			</number_charabilityscore>
+			<label_fieldtop name="klugheit_label">
+				<anchored to="klugheit" />
+				<static textres="kl" />
+			</label_fieldtop>
+
+			<number_charabilityscore name="intuition" source="attribute.intuition.aktuell">
+				<anchored to="mut">
+					<top anchor="top" offset="0" />
+					<left anchor="right" relation="relative" offset="15" />
+				</anchored>
+			</number_charabilityscore>
+			<label_fieldtop name="intuition_label">
+				<anchored to="intuition" />
+				<static textres="in" />
+			</label_fieldtop>
+
+			<number_charabilityscore name="charisma" source="attribute.charisma.aktuell">
+				<anchored to="mut">
+					<top anchor="top" offset="0" />
+					<left anchor="right" relation="relative" offset="15" />
+				</anchored>
+			</number_charabilityscore>
+			<label_fieldtop name="charisma_label">
+				<anchored to="charisma" />
+				<static textres="ch" />
+			</label_fieldtop>
+
+			<number_charabilityscore name="fingerfertigkeit" source="attribute.fingerfertigkeit.aktuell">
+				<anchored to="mut">
+					<top anchor="top" offset="0" />
+					<left anchor="right" relation="relative" offset="15" />
+				</anchored>
+			</number_charabilityscore>
+			<label_fieldtop name="fingerfertigkeit_label">
+				<anchored to="fingerfertigkeit" />
+				<static textres="ff" />
+			</label_fieldtop>
+
+			<number_charabilityscore name="gewandtheit" source="attribute.gewandtheit.aktuell">
+				<anchored to="mut">
+					<top anchor="top" offset="0" />
+					<left anchor="right" relation="relative" offset="15" />
+				</anchored>
+			</number_charabilityscore>
+			<label_fieldtop name="gewandtheit_label">
+				<anchored to="gewandtheit" />
+				<static textres="ge" />
+			</label_fieldtop>
+
+			<number_charabilityscore name="konstitution" source="attribute.konstitution.aktuell">
+				<anchored to="mut">
+					<top anchor="top" offset="0" />
+					<left anchor="right" relation="relative" offset="15" />
+				</anchored>
+			</number_charabilityscore>
+			<label_fieldtop name="konstitution_label">
+				<anchored to="konstitution" />
+				<static textres="ko" />
+			</label_fieldtop>
+
+			<number_charabilityscore name="koerperkraft" source="attribute.koerperkraft.aktuell">
+				<anchored to="mut">
+					<top anchor="top" offset="0" />
+					<left anchor="right" relation="relative" offset="15" />
+				</anchored>
+			</number_charabilityscore>
+			<label_fieldtop name="koerperkraft_label">
+				<anchored to="koerperkraft" />
+				<static textres="kk" />
+			</label_fieldtop>
+		</sheetdata>
+	</windowclass>
+
+	<windowclass name="charsheet_skilllistitem_normal">
+		<sizelimits>
+			<minimum>
+				<height>18</height>
+			</minimum>
+		</sizelimits>		
+		<sheetdata>
+			<stringfield name="label">
+				<anchored>
+					<left>
+						<anchor>left</anchor>
+						<offset>2</offset>
+					</left>				
+					<top>
+						<anchor>top</anchor>
+						<offset>2</offset>
+					</top>
+					<size>
+						<width>120</width>
+					</size>
+				</anchored>
+				<font>sheetlabelsmall</font>
+				<frame>
+					<name>textline</name>
+					<offset>0,5,0,0</offset>
+				</frame>
+			</stringfield>	
+			
+			<stringfield name="probe">
+				<anchored>
+					<left>
+						<parent>label</parent>						
+						<anchor>left</anchor>
+						<offset>125</offset>
+					</left>				
+					<top>
+						<parent>label</parent>						
+						<anchor>top</anchor>
+						<offset>0</offset>
+					</top>
+					<size>
+						<width>50</width>
+					</size>
+				</anchored>
+				<font>sheetlabelsmall</font>
+				<center/>
+				<frame>
+					<name>textline</name>
+					<offset>0,5,0,0</offset>
+				</frame>
+				<script file="campaign/scripts/char_skilllistitem_probe_dsa.lua"/>
+			</stringfield>	
+			
+			<stringfield name="wert">
+				<anchored>
+					<left>
+						<parent>probe</parent>						
+						<anchor>left</anchor>
+						<offset>55</offset>
+					</left>				
+					<top>
+						<parent>probe</parent>						
+						<anchor>top</anchor>
+						<offset>0</offset>
+					</top>
+					<size>
+						<width>30</width>
+					</size>
+				</anchored>
+				<font>sheetlabelsmallbold</font>
+				<center/>
+				<frame>
+					<name>textline</name>
+					<offset>0,5,0,0</offset>
+				</frame>
+			</stringfield>				
+		</sheetdata>
+	</windowclass>	
+	
+	<windowclass name="charsheet_skilllistitem_koerper">
+		<sizelimits>
+			<minimum>
+				<height>18</height>
+			</minimum>
+		</sizelimits>		
+		<sheetdata>
+			<stringfield name="label">
+				<anchored>
+					<left>
+						<anchor>left</anchor>
+						<offset>2</offset>
+					</left>				
+					<top>
+						<anchor>top</anchor>
+						<offset>2</offset>
+					</top>
+					<size>
+						<width>90</width>
+					</size>
+				</anchored>
+				<font>sheetlabelsmall</font>
+				<frame>
+					<name>textline</name>
+					<offset>0,5,0,0</offset>
+				</frame>
+			</stringfield>	
+			
+			<stringfield name="ebe">
+				<anchored>
+					<left>
+						<parent>label</parent>						
+						<anchor>left</anchor>
+						<offset>95</offset>
+					</left>				
+					<top>
+						<parent>label</parent>						
+						<anchor>top</anchor>
+						<offset>0</offset>
+					</top>
+					<size>
+						<width>30</width>
+					</size>
+				</anchored>
+				<font>sheetlabelsmall</font>
+				<center/>				
+				<frame>
+					<name>textline</name>
+					<offset>0,5,0,0</offset>
+				</frame>
+			</stringfield>				
+			
+			<stringfield name="probe">
+				<anchored>
+					<left>
+						<parent>ebe</parent>						
+						<anchor>left</anchor>
+						<offset>35</offset>
+					</left>				
+					<top>
+						<parent>ebe</parent>						
+						<anchor>top</anchor>
+						<offset>0</offset>
+					</top>
+					<size>
+						<width>50</width>
+					</size>
+				</anchored>
+				<font>sheetlabelsmall</font>
+				<center/>
+				<frame>
+					<name>textline</name>
+					<offset>0,5,0,0</offset>
+				</frame>
+				<script file="campaign/scripts/char_skilllistitem_probe_dsa.lua"/>
+			</stringfield>	
+			
+			<stringfield name="wert">
+				<anchored>
+					<left>
+						<parent>probe</parent>						
+						<anchor>left</anchor>
+						<offset>55</offset>
+					</left>				
+					<top>
+						<parent>probe</parent>						
+						<anchor>top</anchor>
+						<offset>0</offset>
+					</top>
+					<size>
+						<width>30</width>
+					</size>
+				</anchored>
+				<font>sheetlabelsmallbold</font>
+				<center/>
+				<frame>
+					<name>textline</name>
+					<offset>0,5,0,0</offset>
+				</frame>
+			</stringfield>				
+		</sheetdata>
+	</windowclass>		
+
+
+	<windowclass name="charsheet_skilllistitem_kampf">
+		<sizelimits>
+			<minimum>
+				<height>18</height>
+			</minimum>
+		</sizelimits>		
+		<sheetdata>
+			<stringfield name="label">
+				<anchored>
+					<left>
+						<anchor>left</anchor>
+						<offset>2</offset>
+					</left>				
+					<top>
+						<anchor>top</anchor>
+						<offset>2</offset>
+					</top>
+					<size>
+						<width>90</width>
+					</size>
+				</anchored>
+				<font>sheetlabelsmall</font>
+				<frame>
+					<name>textline</name>
+					<offset>0,5,0,0</offset>
+				</frame>
+			</stringfield>	
+			
+			<stringfield name="ebe">
+				<anchored>
+					<left>
+						<parent>label</parent>						
+						<anchor>left</anchor>
+						<offset>95</offset>
+					</left>				
+					<top>
+						<parent>label</parent>						
+						<anchor>top</anchor>
+						<offset>0</offset>
+					</top>
+					<size>
+						<width>30</width>
+					</size>
+				</anchored>
+				<font>sheetlabelsmall</font>
+				<center/>				
+				<frame>
+					<name>textline</name>
+					<offset>0,5,0,0</offset>
+				</frame>
+			</stringfield>				
+			
+			<stringfield name="atpa">
+				<anchored>
+					<left>
+						<parent>ebe</parent>						
+						<anchor>left</anchor>
+						<offset>35</offset>
+					</left>				
+					<top>
+						<parent>ebe</parent>						
+						<anchor>top</anchor>
+						<offset>0</offset>
+					</top>
+					<size>
+						<width>40</width>
+					</size>
+				</anchored>
+				<font>sheetlabelsmall</font>
+				<center/>
+				<frame>
+					<name>textline</name>
+					<offset>0,5,0,0</offset>
+				</frame>
+			</stringfield>	
+			
+			<stringfield name="wert">
+				<anchored>
+					<left>
+						<parent>atpa</parent>						
+						<anchor>left</anchor>
+						<offset>45</offset>
+					</left>				
+					<top>
+						<parent>atpa</parent>						
+						<anchor>top</anchor>
+						<offset>0</offset>
+					</top>
+					<size>
+						<width>30</width>
+					</size>
+				</anchored>
+				<font>sheetlabelsmallbold</font>
+				<center/>
+				<frame>
+					<name>textline</name>
+					<offset>0,5,0,0</offset>
+				</frame>
+			</stringfield>				
+		</sheetdata>
+	</windowclass>	
+
+
+	<windowclass name="charsheet_skilllistitem_sprache">
+		<sizelimits>
+			<minimum>
+				<height>18</height>
+			</minimum>
+		</sizelimits>		
+		<sheetdata>
+			<stringfield name="label">
+				<anchored>
+					<left>
+						<anchor>left</anchor>
+						<offset>2</offset>
+					</left>				
+					<top>
+						<anchor>top</anchor>
+						<offset>2</offset>
+					</top>
+					<size>
+						<width>90</width>
+					</size>
+				</anchored>
+				<font>sheetlabelsmall</font>
+				<frame>
+					<name>textline</name>
+					<offset>0,5,0,0</offset>
+				</frame>
+			</stringfield>	
+			
+			<stringfield name="komplexitaet">
+				<anchored>
+					<left>
+						<parent>label</parent>						
+						<anchor>left</anchor>
+						<offset>95</offset>
+					</left>				
+					<top>
+						<parent>label</parent>						
+						<anchor>top</anchor>
+						<offset>0</offset>
+					</top>
+					<size>
+						<width>30</width>
+					</size>
+				</anchored>
+				<font>sheetlabelsmall</font>
+				<center/>				
+				<frame>
+					<name>textline</name>
+					<offset>0,5,0,0</offset>
+				</frame>
+			</stringfield>				
+			
+			<stringfield name="probe">
+				<anchored>
+					<left>
+						<parent>komplexitaet</parent>						
+						<anchor>left</anchor>
+						<offset>35</offset>
+					</left>				
+					<top>
+						<parent>komplexitaet</parent>						
+						<anchor>top</anchor>
+						<offset>0</offset>
+					</top>
+					<size>
+						<width>50</width>
+					</size>
+				</anchored>
+				<font>sheetlabelsmall</font>
+				<center/>
+				<frame>
+					<name>textline</name>
+					<offset>0,5,0,0</offset>
+				</frame>
+				<script file="campaign/scripts/char_skilllistitem_probe_dsa.lua"/>
+			</stringfield>	
+			
+			<stringfield name="wert">
+				<anchored>
+					<left>
+						<parent>probe</parent>						
+						<anchor>left</anchor>
+						<offset>55</offset>
+					</left>				
+					<top>
+						<parent>probe</parent>						
+						<anchor>top</anchor>
+						<offset>0</offset>
+					</top>
+					<size>
+						<width>30</width>
+					</size>
+				</anchored>
+				<font>sheetlabelsmallbold</font>
+				<center/>
+				<frame>
+					<name>textline</name>
+					<offset>0,5,0,0</offset>
+				</frame>
+			</stringfield>				
+		</sheetdata>
+	</windowclass>		
+	
+</root>
