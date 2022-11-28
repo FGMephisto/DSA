@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<root>
+	<windowclass name="charsheet_inventory" merge="join">
+		<sheetdata>
+			<frame_char name="inventoryframe">
+				<bounds>15,70,-29,-205</bounds>
+			</frame_char>
+		</sheetdata>
+	</windowclass>
+</root>

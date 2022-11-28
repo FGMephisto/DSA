@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<root>
+
+	<windowclass name="charsheet_abilities">
+		<placement>
+			<size>
+				<width>252</width>
+				<height>611</height>
+			</size>
+		</placement>
+		<nodelete />
+		<sheetdata>
+						
+			<genericcontrol>
+				<bounds>432,30,60,51</bounds>
+				<icon>cs_logo</icon>
+			</genericcontrol>			
+			
+			<genericcontrol name="spellframe">
+				<bounds>15,90,480,500</bounds>
+					<frame>
+						<name>groupbox</name>
+					</frame>
+			</genericcontrol>			
+			
+		</sheetdata>
+	</windowclass>
+	
+</root>

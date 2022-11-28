@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<root>
+
+	<windowclass name="charsheet_spells">
+		<placement>
+			<size>
+				<width>252</width>
+				<height>611</height>
+			</size>
+		</placement>
+		<nodelete />
+		<sheetdata>
+
+			<genericcontrol name="attributframe">
+				<bounds>15,70,415,70</bounds>
+					<frame>
+						<name>groupbox</name>
+					</frame>
+			</genericcontrol>
+			
+			<abilityscore name="mut" source="attribute.mut.aktuell">
+				<anchored>
+					<to>attributframe</to>
+					<position>insidetopleft</position>
+					<offset>15,33</offset>
+				</anchored>
+				<tabtarget>
+					<next>strengthdamage</next>
+					<prev>size</prev>
+				</tabtarget>				
+			</abilityscore>	
+			<abilitylabel>
+				<anchored>
+					<to>mut</to>
+					<position>aboveleft</position>
+					<offset>10,0</offset>
+				</anchored>			
+				<static>Mu</static>
+			</abilitylabel>				
+
+			<abilityscore name="klugheit" source="attribute.klugheit.aktuell">
+				<anchored>
+					<to>attributframe</to>
+					<position>insidetopleft</position>
+					<offset>65,33</offset>
+				</anchored>
+				<tabtarget>
+					<next>strengthdamage</next>
+					<prev>size</prev>
+				</tabtarget>				
+			</abilityscore>
+			<abilitylabel>
+				<anchored>
+					<to>klugheit</to>
+					<position>aboveleft</position>
+					<offset>10,0</offset>
+				</anchored>			
+				<static>Kl</static>
+			</abilitylabel>				
+			
+			<abilityscore name="intuition" source="attribute.intuition.aktuell">
+				<anchored>
+					<to>attributframe</to>
+					<position>insidetopleft</position>
+					<offset>115,33</offset>
+				</anchored>
+				<tabtarget>
+					<next>strengthdamage</next>
+					<prev>size</prev>
+				</tabtarget>				
+			</abilityscore>
+			<abilitylabel>
+				<anchored>
+					<to>intuition</to>
+					<position>aboveleft</position>
+					<offset>10,0</offset>
+				</anchored>			
+				<static>In</static>
+			</abilitylabel>				
+
+			<abilityscore name="charisma" source="attribute.charisma.aktuell">
+				<anchored>
+					<to>attributframe</to>
+					<position>insidetopleft</position>
+					<offset>165,33</offset>
+				</anchored>
+				<tabtarget>
+					<next>strengthdamage</next>
+					<prev>size</prev>
+				</tabtarget>				
+			</abilityscore>
+			<abilitylabel>
+				<anchored>
+					<to>charisma</to>
+					<position>aboveleft</position>
+					<offset>10,0</offset>
+				</anchored>			
+				<static>Ch</static>
+			</abilitylabel>				
+			
+			<abilityscore name="fingerfertigkeit" source="attribute.fingerfertigkeit.aktuell">
+				<anchored>
+					<to>attributframe</to>
+					<position>insidetopleft</position>
+					<offset>215,33</offset>
+				</anchored>
+				<tabtarget>
+					<next>strengthdamage</next>
+					<prev>size</prev>
+				</tabtarget>				
+			</abilityscore>	
+			<abilitylabel>
+				<anchored>
+					<to>fingerfertigkeit</to>
+					<position>aboveleft</position>
+					<offset>10,0</offset>
+				</anchored>			
+				<static>Ff</static>
+			</abilitylabel>				
+
+			<abilityscore name="gewandtheit" source="attribute.gewandtheit.aktuell">
+				<anchored>
+					<to>attributframe</to>
+					<position>insidetopleft</position>
+					<offset>265,33</offset>
+				</anchored>
+				<tabtarget>
+					<next>strengthdamage</next>
+					<prev>size</prev>
+				</tabtarget>				
+			</abilityscore>	
+			<abilitylabel>
+				<anchored>
+					<to>gewandtheit</to>
+					<position>aboveleft</position>
+					<offset>10,0</offset>
+				</anchored>			
+				<static>Ge</static>
+			</abilitylabel>				
+
+			<abilityscore name="konstitution" source="attribute.konstitution.aktuell">
+				<anchored>
+					<to>attributframe</to>
+					<position>insidetopleft</position>
+					<offset>315,33</offset>
+				</anchored>
+				<tabtarget>
+					<next>strengthdamage</next>
+					<prev>size</prev>
+				</tabtarget>				
+			</abilityscore>	
+			<abilitylabel>
+				<anchored>
+					<to>konstitution</to>
+					<position>aboveleft</position>
+					<offset>10,0</offset>
+				</anchored>			
+				<static>Ko</static>
+			</abilitylabel>				
+			
+			<abilityscore name="koerperkraft" source="attribute.koerperkraft.aktuell">
+				<anchored>
+					<to>attributframe</to>
+					<position>insidetopleft</position>
+					<offset>365,33</offset>
+				</anchored>
+				<tabtarget>
+					<next>strengthdamage</next>
+					<prev>size</prev>
+				</tabtarget>				
+			</abilityscore>	
+			<abilitylabel>
+				<anchored>
+					<to>koerperkraft</to>
+					<position>aboveleft</position>
+					<offset>10,0</offset>
+				</anchored>			
+				<static>Kk</static>
+			</abilitylabel>	
+
+			<genericcontrol name="spellframe">
+				<bounds>15,140,480,400</bounds>
+					<frame>
+						<name>groupbox</name>
+					</frame>
+			</genericcontrol>			
+			
+			<stringcontrol>
+				<anchored>
+					<to>spellframe</to>
+					<position>insidetopleft</position>
+					<offset>20,9</offset>
+				</anchored>
+				<font>sheetlabelsmall</font>
+				<static>Zauber</static>
+			</stringcontrol>				
+			
+			<stringcontrol>
+				<anchored>
+					<to>spellframe</to>
+					<position>insidetopleft</position>
+					<offset>215,9</offset>
+				</anchored>
+				<font>sheetlabelsmall</font>
+				<static>Hausz.</static>
+			</stringcontrol>	
+			
+			<stringcontrol>
+				<anchored>
+					<to>spellframe</to>
+					<position>insidetopleft</position>
+					<offset>255,9</offset>
+				</anchored>
+				<font>sheetlabelsmall</font>
+				<static>Probe</static>
+			</stringcontrol>				
+
+			<stringcontrol>
+				<anchored>
+					<to>spellframe</to>
+					<position>insidetopleft</position>
+					<offset>305,9</offset>
+				</anchored>
+				<font>sheetlabelsmall</font>
+				<static>Rep</static>
+			</stringcontrol>
+
+			<stringcontrol>
+				<anchored>
+					<to>spellframe</to>
+					<position>insidetopleft</position>
+					<offset>340,9</offset>
+				</anchored>
+				<font>sheetlabelsmall</font>
+				<static>Wert</static>
+			</stringcontrol>
+			
+			<stringcontrol>
+				<anchored>
+					<to>spellframe</to>
+					<position>insidetopleft</position>
+					<offset>375,9</offset>
+				</anchored>
+				<font>sheetlabelsmall</font>
+				<static>Seite</static>
+			</stringcontrol>			
+			
+			<windowlist name="spelllist">
+				<anchored>
+					<to>spellframe</to>
+					<position>insidetopleft</position>
+					<offset>15,20</offset>
+				</anchored>
+				<datasource>.spelllist</datasource>
+				<class>charsheet_spelllistitem</class>
+				<allowcreate />
+				<allowdelete />
+				<script file="campaign/scripts/char_spelllist.lua" />
+			</windowlist>	
+			
+			
+			<genericcontrol name="metaframe">
+				<bounds>15,540,480,110</bounds>
+					<frame>
+						<name>groupbox</name>
+					</frame>
+			</genericcontrol>	
+			
+			<stringcontrol>
+				<anchored>
+					<to>metaframe</to>
+					<position>insidetopleft</position>
+					<offset>20,9</offset>
+				</anchored>
+				<font>sheetlabelsmall</font>
+				<static>Sonderfertigkeiten und Rituale</static>
+			</stringcontrol>			
+			
+			<windowlist name="metalist">
+				<anchored>
+					<to>metaframe</to>
+					<position>insidetopleft</position>
+					<offset>15,30</offset>
+				</anchored>
+				<datasource>.metaliste</datasource>
+				<class>charsheet_metalistitem</class>
+				<allowcreate />
+				<allowdelete />
+				<script>
+					function onInit() 
+						local list = getDatabaseNode().createChild("metaliste");	
+						local count = list.getChildCount();
+						if count == 0 then
+							local default = list.createChild("default");
+						end
+					end				
+				</script>
+			</windowlist>			
+		</sheetdata>
+	</windowclass>
+	
+	<windowclass name="charsheet_metalistitem">
+		<sizelimits>
+			<minimum>
+				<height>18</height>
+			</minimum>
+		</sizelimits>		
+		<sheetdata>
+		
+			<stringfield name="label">
+				<anchored>
+					<left>
+						<anchor>left</anchor>
+						<offset>0</offset>
+					</left>				
+					<top>
+						<anchor>top</anchor>
+						<offset>2</offset>
+					</top>
+					<size>
+						<width>450</width>
+					</size>
+				</anchored>
+				<font>sheetlabelsmall</font>
+				<frame>
+					<name>textline</name>
+					<offset>0,5,0,0</offset>
+				</frame>
+			</stringfield>						
+		</sheetdata>
+	</windowclass>				
+	
+	
+	<windowclass name="charsheet_spelllistitem">
+		<sizelimits>
+			<minimum>
+				<height>18</height>
+			</minimum>
+		</sizelimits>		
+		<sheetdata>
+		
+			<stringfield name="label">
+				<anchored>
+					<left>
+						<anchor>left</anchor>
+						<offset>0</offset>
+					</left>				
+					<top>
+						<anchor>top</anchor>
+						<offset>2</offset>
+					</top>
+					<size>
+						<width>200</width>
+					</size>
+				</anchored>
+				<font>sheetlabelsmall</font>
+				<frame>
+					<name>textline</name>
+					<offset>0,5,0,0</offset>
+				</frame>
+			</stringfield>	
+			
+			<stringfield name="hauszauber">
+				<anchored>
+					<left>
+						<parent>label</parent>						
+						<anchor>right</anchor>
+						<offset>5</offset>
+					</left>				
+					<top>
+						<parent>label</parent>						
+						<anchor>top</anchor>
+						<offset>0</offset>
+					</top>
+					<size>
+						<width>20</width>
+					</size>
+				</anchored>
+				<font>sheetlabelsmallbold</font>
+				<center/>
+				<frame>
+					<name>textline</name>
+					<offset>0,5,0,0</offset>
+				</frame>
+			</stringfield>				
+
+			<stringfield name="probe">
+				<anchored>
+					<left>
+						<parent>hauszauber</parent>						
+						<anchor>right</anchor>
+						<offset>5</offset>
+					</left>				
+					<top>
+						<parent>label</parent>						
+						<anchor>top</anchor>
+						<offset>0</offset>
+					</top>
+					<size>
+						<width>50</width>
+					</size>
+				</anchored>
+				<font>sheetlabelsmall</font>
+				<center/>
+				<frame>
+					<name>textline</name>
+					<offset>0,5,0,0</offset>
+				</frame>
+				<script file="campaign/scripts/char_skilllistitem_probe.lua"/>
+			</stringfield>	
+
+			<stringfield name="repraesentation">
+				<anchored>
+					<left>
+						<parent>probe</parent>						
+						<anchor>right</anchor>
+						<offset>5</offset>
+					</left>				
+					<top>
+						<parent>probe</parent>						
+						<anchor>top</anchor>
+						<offset>0</offset>
+					</top>
+					<size>
+						<width>30</width>
+					</size>
+				</anchored>
+				<font>sheetlabelsmallbold</font>
+				<center/>
+				<frame>
+					<name>textline</name>
+					<offset>0,5,0,0</offset>
+				</frame>
+			</stringfield>	
+			
+			<stringfield name="wert">
+				<anchored>
+					<left>
+						<parent>repraesentation</parent>						
+						<anchor>right</anchor>
+						<offset>5</offset>
+					</left>				
+					<top>
+						<parent>probe</parent>						
+						<anchor>top</anchor>
+						<offset>0</offset>
+					</top>
+					<size>
+						<width>30</width>
+					</size>
+				</anchored>
+				<font>sheetlabelsmallbold</font>
+				<center/>
+				<frame>
+					<name>textline</name>
+					<offset>0,5,0,0</offset>
+				</frame>
+			</stringfield>				
+
+			<stringfield name="seite">
+				<anchored>
+					<left>
+						<parent>wert</parent>						
+						<anchor>right</anchor>
+						<offset>5</offset>
+					</left>				
+					<top>
+						<parent>probe</parent>						
+						<anchor>top</anchor>
+						<offset>0</offset>
+					</top>
+					<size>
+						<width>30</width>
+					</size>
+				</anchored>
+				<font>sheetlabelsmallbold</font>
+				<center/>
+				<frame>
+					<name>textline</name>
+					<offset>0,5,0,0</offset>
+				</frame>
+			</stringfield>						
+		</sheetdata>
+	</windowclass>		
+	
+</root>

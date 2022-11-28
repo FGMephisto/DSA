@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!-- 
+  Please see the license.html file included with this distribution for 
+  attribution and copyright information.
+-->
+
+<root>
+	<windowclass name="charsheet">
+		<frame>charsheet</frame>
+		<placement>
+			<size width="525" height="665" />
+		</placement>
+		<sizelimits>
+			<minimum width="525" height="665" />
+			<dynamic />
+		</sizelimits>
+		<softclose />
+		<tooltip field="name" />
+		<sheetdata>
+			<sub_charsheet_overview name="overview" />
+
+			<subwindow name="main">
+				<bounds>0,0,-1,-1</bounds>
+				<class>charsheet_main</class>
+			</subwindow>
+			<subwindow name="feats">
+				<bounds>0,0,-1,-1</bounds>
+				<class>charsheet_feats</class>
+			</subwindow>			
+			<subwindow name="skills">
+				<bounds>0,0,-1,-1</bounds>
+				<class>charsheet_skills</class>
+			</subwindow>
+			<subwindow name="combat">
+				<bounds>0,0,-1,-1</bounds>
+				<class>charsheet_combat</class>
+			</subwindow>
+			<subwindow name="inventory">
+				<bounds>0,0,-1,-1</bounds>
+				<class>charsheet_inventory</class>
+			</subwindow>
+			<subwindow name="spells">
+				<bounds>0,0,-1,-1</bounds>
+				<class>charsheet_spells</class>
+			</subwindow>
+			<subwindow name="notes">
+				<bounds>0,0,-1,-1</bounds>
+				<class>charsheet_notes</class>
+			</subwindow>
+
+			<tabcontrol name="tabs">
+				<bounds>-22,50,18,492</bounds>
+				<tab>
+					<icon>tab_main</icon>
+					<subwindow>main</subwindow>
+				</tab>
+				<tab>
+					<icon>tab_vnsf</icon>
+					<subwindow>feats</subwindow>
+				</tab>
+				<tab>
+					<icon>tab_skills</icon>
+					<subwindow>skills</subwindow>
+				</tab>
+				<tab>
+					<icon>tab_combat</icon>
+					<subwindow>combat</subwindow>
+				</tab>
+				<tab>
+					<icon>tab_inventory</icon>
+					<subwindow>inventory</subwindow>
+				</tab>
+				<tab>
+					<icon>tab_spells</icon>
+					<subwindow>spells</subwindow>
+				</tab>
+				<tab>
+					<icon>tab_notes</icon>
+					<subwindow>notes</subwindow>
+				</tab>
+				<activate>1</activate>
+			</tabcontrol>
+
+			<resize_charsheet />
+			<close_charsheet />
+		</sheetdata>
+	</windowclass>
+</root>

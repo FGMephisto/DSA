@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!-- This file is provided under the Open Game License version 1.0a
+  For more information on OGL and related issues, see 
+    http://www.wizards.com/d20
+ 
+  For information on the Fantasy Grounds d20 Ruleset licensing and
+  the OGL license text, see the d20 ruleset license in the program
+  options.
+ 
+  All producers of work derived from this definition are adviced to
+  familiarize themselves with the above licenses, and to take special
+  care in providing the definition of Product Identity (as specified
+  by the OGL) in their products.
+
+  Copyright 2007 SmiteWorks Ltd.
+-->
+
+<root>
+	<template name="abilityscore">
+		<numberfield>
+			<anchored>
+				<position>belowleft</position>
+				<offset>0,7</offset>
+				<size>
+					<width>32</width>
+					<height>20</height>
+				</size>
+			</anchored>
+			<frame>
+				<name>fielddark</name>
+				<offset>5,5,5,5</offset>
+			</frame>
+			<keyeditframe>
+				<name>sheetfocus</name>
+				<offset>5,5,5,5</offset>
+			</keyeditframe>
+			<font>sheetnumber</font>
+			<script>
+				function checkColor() 
+					local basis = getDatabaseNode().getParent().getChild("basis");
+					if not basis then
+						 return
+					end
+					if basis == this then
+						return
+					end
+					local b = basis.getValue();
+
+					setColor("#ff000000");
+
+					if getValue() &lt; b then
+						setColor("#ffff0000");
+					end
+					if getValue() &gt; b then
+						setColor("#ff004000");
+					end				
+				end
+			
+				function onInit()
+					if getValue() == 0 then
+						setValue(0);
+					end
+					checkColor();
+				end
+				
+				function onValueChanged() 				
+					checkColor();
+				end
+			</script>
+		</numberfield>
+	</template>
+	
+	<template name="abilitylabel">
+		<stringcontrol>
+			<anchored>
+				<position>lefthigh</position>
+				<offset>0,4</offset>
+				<size>
+					<width>100</width>
+					<height>20</height>
+				</size>
+			</anchored>
+			<static />
+			<font>sheetlabel</font>
+		</stringcontrol>
+	</template>
+
+	<template name="classstring">
+		<stringfield>
+			<anchored>
+				<top>
+					<parent>classanchor</parent>
+					<anchor>bottom</anchor>
+					<relation>current</relation>
+					<offset>5</offset>
+				</top>
+				<left>
+					<parent>classframe</parent>
+					<anchor>left</anchor>
+					<relation>absolute</relation>
+					<offset>15</offset>
+				</left>
+				<right>
+					<parent>classframe</parent>
+					<anchor>right</anchor>
+					<relation>absolute</relation>
+					<offset>-53</offset>
+				</right>
+				<size>
+					<height>20</height>
+				</size>
+			</anchored>
+			<font>sheettext</font>
+			<frame>
+				<name>textline</name>
+			</frame>
+		</stringfield>
+	</template>
+
+	<template name="hitpointfield">
+		<numberfield>
+			<frame>
+				<name>fielddark</name>
+				<offset>5,5,5,5</offset>
+			</frame>
+			<keyeditframe>
+				<name>sheetfocus</name>
+				<offset>5,5,5,5</offset>
+			</keyeditframe>
+			<font>sheetnumber</font>
+			<stateframe>
+				<drophilight>
+					<name>sheetfocusplus</name>
+					<offset>5,5,5,5</offset>
+				</drophilight>
+			</stateframe>
+			<droptypes>
+				<type>number</type>
+			</droptypes>
+			<script>
+				function onDrop(x, y, draginfo)
+					if draginfo.isType("number") then
+						setValue(getValue() + draginfo.getNumberData());
+						return true;
+					end
+				end
+			</script>
+		</numberfield>
+	</template>
+
+	<template name="textlistitemvalue">
+		<stringfield name="value">
+			<font>sheettext</font>
+			<multilinespacing>20</multilinespacing>
+			<frame>
+				<name>textline</name>
+			</frame>
+			<script>
+				function onEnter()
+					local new = window.windowlist.createWindow();
+					new[getName()].setFocus();
+				end
+				
+				function onNavigateDown()
+					local next = window.windowlist.getNextWindow(window);
+					if next then
+						next[getName()].setFocus();
+						next[getName()].setCursorPosition(1);
+						next[getName()].setSelectionPosition(1);
+					end
+				end
+				
+				function onNavigateUp()
+					local prev = window.windowlist.getPrevWindow(window);
+					if prev then
+						prev[getName()].setFocus();
+						prev[getName()].setCursorPosition(#prev[getName()].getValue()+1);
+						prev[getName()].setSelectionPosition(#prev[getName()].getValue()+1);
+					end
+				end
+				
+				function onNavigateRight()
+					if tabtarget and tabtarget[1] and tabtarget[1].next and tabtarget[1].next[1] then
+						local target = window[tabtarget[1].next[1]];
+
+						if type(target) == "stringcontrol" then
+							target.setFocus();
+							target.setCursorPosition(1);
+							target.setSelectionPosition(1);
+						end
+					end
+				end
+				
+				function onNavigateLeft()
+					if tabtarget and tabtarget[1] and tabtarget[1].prev and tabtarget[1].prev[1] then
+						local target = window[tabtarget[1].prev[1]];
+
+						if type(target) == "stringcontrol" then
+							target.setFocus();
+							target.setCursorPosition(#target.getValue()+1);
+							target.setSelectionPosition(#target.getValue()+1);
+						end
+					end
+				end
+				
+				function onDeleteUp()
+					if getValue() == "" and not nodelete then
+						local target = window.windowlist.getPrevWindow(window);
+						if target then
+							target[getName()].setFocus();
+							target[getName()].setCursorPosition(#target[getName()].getValue()+1);
+							target[getName()].setSelectionPosition(#target[getName()].getValue()+1);
+						end
+						
+						window.getDatabaseNode().delete();
+					end
+				end
+				
+				function onDeleteDown()
+					if getValue() == "" and not nodelete then
+						local target = window.windowlist.getNextWindow(window);
+						if target then
+							target[getName()].setFocus();
+							target[getName()].setCursorPosition(1);
+							target[getName()].setSelectionPosition(1);
+						end
+						
+						window.getDatabaseNode().delete();
+					end
+				end
+				
+				function onGainFocus()
+					window.setFrame("rowshade");
+				end
+				
+				function onLoseFocus()
+					window.setFrame(nil);
+				end
+			</script>
+		</stringfield>
+	</template>
+
+	<template name="skillsetcontrol">
+		<genericcontrol>
+			<stateicons>
+				<on>indicator_checkon</on>
+				<off>indicator_checkoff</off>
+			</stateicons>
+			<script>
+				function disable()
+					if activesetnode and activesetnode.getValue() == tonumber(setid[1]) then
+						activesetnode.setValue(1);
+					end
+
+					setVisible(false);
+				end
+			
+				function update(source)
+					local state = false;
+					if activesetnode and activesetnode.getValue() == tonumber(setid[1]) then
+						state = true;
+					end
+					
+					if not state then
+						setIcon(stateicons[1].off[1]);
+					else
+						setIcon(stateicons[1].on[1]);
+					end
+				end
+				
+				function onClickDown(button, x, y)
+					if activesetnode and setid[1] ~= 0 and activesetnode.getValue() ~= tonumber(setid[1]) then
+						activesetnode.setValue(setid[1]);
+					end
+				end
+
+				function onInit()
+					activesetnode = window.getDatabaseNode().getChild("activeskillset");
+
+					--[[ If the active skill set is not yet set, initialize it to the first set ]]
+					if not activesetnode then
+						activesetnode = window.getDatabaseNode().createChild("activeskillset", "number");
+						activesetnode.setValue(1);
+					end
+				
+					activesetnode.onUpdate = update;
+					update(activesetnode);
+				end
+			</script>
+		</genericcontrol>
+	</template>
+	
+	<template name="skillsetlabel">
+		<stringfield>
+			<font>sheettextsmall</font>
+			<static />
+			<script>
+				function onClickDown(button, x, y)
+					window[target[1]].onClickDown(button, x, y);
+				end
+			
+				function updateVisibility()
+					if defaultset then
+						return;
+					end
+				
+					if getValue() == "" then
+						setVisible(false);
+						window[target[1]].disable();
+					else
+						setVisible(true);
+						window[target[1]].setVisible(true);
+					end
+				end
+
+				function onValueChanged()
+					updateVisibility();
+				end
+			
+				function onInit()
+					updateVisibility();
+				end
+			</script>
+		</stringfield>
+	</template>
+
+		<template name="tabcontrol">
+			<genericcontrol>
+				<tab mergerule="resetandadd" />
+				<frame>
+					<name>tabs</name>
+				</frame>
+				<script file="scripts/template_tabcontrol.lua" />
+			</genericcontrol>
+	</template>
+
+	<template name="labeledstring">
+		<stringfield>
+			<font>sheettext</font>
+			<frame>
+				<name>textline</name>
+			</frame>
+			<script>
+				labelwidget = nil;
+			
+				function onInit()
+					labelwidget = addTextWidget("sheetlabelinline", string.upper(label[1]));
+					
+					local w,h = labelwidget.getSize();
+					labelwidget.setPosition("bottomleft", w/2, h/2-5);
+				end
+			</script>
+		</stringfield>
+	</template>
+</root>

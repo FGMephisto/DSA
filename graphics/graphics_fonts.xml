@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!-- 
+  Please see the license.html file included with this distribution for 
+  attribution and copyright information.
+-->
+
+<root>
+	<font name="chatitalicfont">
+		<fgffile name="graphics/fonts/regularitalic.fgf" />
+		<ttf file="graphics/fonts/Noto_Sans/NotoSans-Italic.ttf" name="Noto Sans Italic" size="15" />
+		<ttf file="graphic/fonts/regular.fgf" name="chatfont" size="15" />
+		<color value="#000000" />
+	</font>
+
+	<font name="chatbolditalicfont">
+		<fgffile name="graphics/fonts/regularbolditalic.fgf" />
+		<ttf file="graphics/fonts/Noto_Sans/NotoSans-Italic.ttf" name="Noto Sans Bold Italic" size="15" />
+		<color value="#000000" />
+	</font>
+
+	<font name="npcchatfont">
+		<fgffile name="graphics/fonts/regular.fgf" />
+		<ttf file="graphics/fonts/Noto_Sans/NotoSans-Regular.ttf" name="Noto Sans" size="15" />
+		<color value="#000066" />
+	</font>
+
+	<font name="dmfont">
+		<fgffile name="graphics/fonts/regularitalic.fgf" />
+		<ttf file="graphics/fonts/Noto_Sans/NotoSans-Italic.ttf" name="Noto Sans Italic" size="15" />
+		<color value="#000000" />
+	</font>
+
+	<font name="titlefont">
+		<fgffile name="graphics/fonts/title.fgf" />
+		<ttf file="graphics/fonts/Noto_Sans/NotoSans-Regular.ttf" name="Noto Sans" size="15" />
+		<color value="#000000" />
+	</font>
+
+	<font name="diemodsmall">
+		<fgffile name="graphics/fonts/diemodsmall.fgf" />
+		<ttf file="graphics/fonts/Noto_Sans/NotoSans-Regular.ttf" name="Noto Sans" size="15" />
+		<color value="#000000" />
+	</font>
+
+	<font name="smallcontrol">
+		<fgffile name="graphics/fonts/smallcontrol.fgf" />
+		<ttf file="graphics/fonts/Noto_Sans/NotoSans-Regular.ttf" name="Noto Sans" size="15" />
+		<color value="#000000" />
+	</font>
+
+	<font name="sheetnumbersmall">
+		<fgffile name="graphics/fonts/sheetnumbersmall.fgf" />
+		<ttf file="graphics/fonts/Noto_Sans/NotoSans-Regular.ttf" name="Noto Sans" size="15" />
+		<color value="#000000" />
+	</font>
+
+	<font name="sheettextsmall">
+		<fgffile name="graphics/fonts/sheettextsmall.fgf" />
+		<ttf file="graphics/fonts/Noto_Sans/NotoSans-Regular.ttf" name="Noto Sans" size="15" />
+		<color value="#000000" />
+	</font>
+
+	<font name="sheettextblock">
+		<fgffile name="graphics/fonts/sheettextblock.fgf" />
+		<ttf file="graphics/fonts/Noto_Sans/NotoSans-Regular.ttf" name="Noto Sans" size="15" />
+		<color value="#000000" />
+	</font>
+
+	<font name="sheetlabelsmall">
+		<fgffile name="graphics/fonts/sheetlabelsmall.fgf" />
+		<ttf file="graphics/fonts/Noto_Sans/NotoSans-Regular.ttf" name="Noto Sans" size="15" />
+		<color value="#261A12" />
+	</font>
+	
+	<font name="sheetlabelsmallbold">
+		<fgffile name="graphics/fonts/sheetlabelsmallbold.fgf" />
+		<ttf file="graphics/fonts/Noto_Sans/NotoSans-Bold.ttf" name="Noto Sans Nold" size="15" />
+		<color value="#261A12" />
+	</font>
+</root>

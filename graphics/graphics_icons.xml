@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!-- 
+  Please see the license.html file included with this distribution for 
+  attribution and copyright information.
+-->
+
+<root>
+	<icon name="krieger" file="graphics/icons/krieger.png" />
+	
+	<icon name="indicator_checkon" file="graphics/icons/indicator_checkon.png" />
+	<icon name="indicator_checkoff" file="graphics/icons/indicator_checkoff.png" />
+
+	<icon name="tabtop" file="graphics/icons/tabtop.png" />
+	<icon name="tabhorizontal" file="graphics/icons/tabhorizontal.png" />
+	<icon name="tab_main" file="graphics/icons/tab_main.png" />
+	<icon name="tab_combat" file="graphics/icons/tab_combat.png" />
+	<icon name="tab_skills_kampf" file="graphics/icons/tab_skills_kampf.png" />
+	<icon name="tab_skills_wissen" file="graphics/icons/tab_skills_wissen.png" />	
+	<icon name="tab_skills_gesellschaft" file="graphics/icons/tab_skills_gesellschaft.png" />	
+	<icon name="tab_skills_handwerk" file="graphics/icons/tab_skills_handwerk.png" />	
+	<icon name="tab_skills" file="graphics/icons/tab_skills.png" />
+	<icon name="tab_abilities" file="graphics/icons/tab_abilities.png" />
+	<icon name="tab_inventory" file="graphics/icons/tab_inventory.png" />
+	<icon name="tab_spells" file="graphics/icons/tab_spells.png" />
+	<icon name="tab_notes" file="graphics/icons/tab_notes.png" />
+	<icon name="tab_other" file="graphics/icons/tab_other.png" />
+	<icon name="tab_vorteile" file="graphics/icons/tab_vorteile.png" />	
+	<icon name="tab_sf" file="graphics/icons/tab_sf.png" />	
+	<icon name="tab_nachteile" file="graphics/icons/tab_nachteile.png" />		
+	<icon name="tab_vnsf" file="graphics/icons/tab_vnsf.png" />	
+</root>

@@ -1,0 +1,609 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<root>
+	<windowclass name="charsheet_skills">
+	<script file="campaign/scripts/char_skilllist_init.lua"/>
+		<placement>
+			<size>
+				<width>252</width>
+				<height>611</height>
+			</size>
+		</placement>
+		<nodelete />
+		<sheetdata>
+			<subwindow name="skills1">
+				<bounds>0,0,-1,-1</bounds>
+				<class>charsheet_skills1</class>
+
+			</subwindow>
+			<subwindow name="skills2">
+				<bounds>0,0,-1,-1</bounds>
+				<class>charsheet_skills2</class>
+			</subwindow>
+			<subwindow name="skills3">
+				<bounds>0,0,-1,-1</bounds>
+				<class>charsheet_skills3</class>
+			</subwindow>
+			<subwindow name="skills4">
+				<bounds>0,0,-1,-1</bounds>
+				<class>charsheet_skills4</class>
+			</subwindow>
+			<tabcontrol name="tabs">
+				<bounds>-37,86,18,290</bounds>
+				<tab>
+					<icon>tab_skills_kampf</icon>
+					<subwindow>skills1</subwindow>
+				</tab>
+				<tab>
+					<icon>tab_skills_gesellschaft</icon>
+					<subwindow>skills2</subwindow>
+				</tab>
+				<tab>
+					<icon>tab_skills_wissen</icon>
+					<subwindow>skills3</subwindow>
+				</tab>
+				<tab>
+					<icon>tab_skills_handwerk</icon>
+					<subwindow>skills4</subwindow>
+				</tab>
+				<activate>1</activate>
+			</tabcontrol>
+			
+			<genericcontrol name="attributframe">
+				<bounds>15,70,415,70</bounds>
+					<frame>
+						<name>groupbox</name>
+					</frame>
+			</genericcontrol>
+			
+			<abilityscore name="mut" source="attribute.mut.aktuell">
+				<anchored>
+					<to>attributframe</to>
+					<position>insidetopleft</position>
+					<offset>15,33</offset>
+				</anchored>
+				<tabtarget>
+					<next>strengthdamage</next>
+					<prev>size</prev>
+				</tabtarget>				
+			</abilityscore>	
+			<abilitylabel>
+				<anchored>
+					<to>mut</to>
+					<position>aboveleft</position>
+					<offset>10,0</offset>
+				</anchored>			
+				<static>Mu</static>
+			</abilitylabel>				
+
+			<abilityscore name="klugheit" source="attribute.klugheit.aktuell">
+				<anchored>
+					<to>attributframe</to>
+					<position>insidetopleft</position>
+					<offset>65,33</offset>
+				</anchored>
+				<tabtarget>
+					<next>strengthdamage</next>
+					<prev>size</prev>
+				</tabtarget>				
+			</abilityscore>
+			<abilitylabel>
+				<anchored>
+					<to>klugheit</to>
+					<position>aboveleft</position>
+					<offset>10,0</offset>
+				</anchored>			
+				<static>Kl</static>
+			</abilitylabel>				
+			
+			<abilityscore name="intuition" source="attribute.intuition.aktuell">
+				<anchored>
+					<to>attributframe</to>
+					<position>insidetopleft</position>
+					<offset>115,33</offset>
+				</anchored>
+				<tabtarget>
+					<next>strengthdamage</next>
+					<prev>size</prev>
+				</tabtarget>				
+			</abilityscore>
+			<abilitylabel>
+				<anchored>
+					<to>intuition</to>
+					<position>aboveleft</position>
+					<offset>10,0</offset>
+				</anchored>			
+				<static>In</static>
+			</abilitylabel>				
+
+			<abilityscore name="charisma" source="attribute.charisma.aktuell">
+				<anchored>
+					<to>attributframe</to>
+					<position>insidetopleft</position>
+					<offset>165,33</offset>
+				</anchored>
+				<tabtarget>
+					<next>strengthdamage</next>
+					<prev>size</prev>
+				</tabtarget>				
+			</abilityscore>
+			<abilitylabel>
+				<anchored>
+					<to>charisma</to>
+					<position>aboveleft</position>
+					<offset>10,0</offset>
+				</anchored>			
+				<static>Ch</static>
+			</abilitylabel>				
+			
+			<abilityscore name="fingerfertigkeit" source="attribute.fingerfertigkeit.aktuell">
+				<anchored>
+					<to>attributframe</to>
+					<position>insidetopleft</position>
+					<offset>215,33</offset>
+				</anchored>
+				<tabtarget>
+					<next>strengthdamage</next>
+					<prev>size</prev>
+				</tabtarget>				
+			</abilityscore>	
+			<abilitylabel>
+				<anchored>
+					<to>fingerfertigkeit</to>
+					<position>aboveleft</position>
+					<offset>10,0</offset>
+				</anchored>			
+				<static>Ff</static>
+			</abilitylabel>				
+
+			<abilityscore name="gewandtheit" source="attribute.gewandtheit.aktuell">
+				<anchored>
+					<to>attributframe</to>
+					<position>insidetopleft</position>
+					<offset>265,33</offset>
+				</anchored>
+				<tabtarget>
+					<next>strengthdamage</next>
+					<prev>size</prev>
+				</tabtarget>				
+			</abilityscore>	
+			<abilitylabel>
+				<anchored>
+					<to>gewandtheit</to>
+					<position>aboveleft</position>
+					<offset>10,0</offset>
+				</anchored>			
+				<static>Ge</static>
+			</abilitylabel>				
+
+			<abilityscore name="konstitution" source="attribute.konstitution.aktuell">
+				<anchored>
+					<to>attributframe</to>
+					<position>insidetopleft</position>
+					<offset>315,33</offset>
+				</anchored>
+				<tabtarget>
+					<next>strengthdamage</next>
+					<prev>size</prev>
+				</tabtarget>				
+			</abilityscore>	
+			<abilitylabel>
+				<anchored>
+					<to>konstitution</to>
+					<position>aboveleft</position>
+					<offset>10,0</offset>
+				</anchored>			
+				<static>Ko</static>
+			</abilitylabel>				
+			
+			<abilityscore name="koerperkraft" source="attribute.koerperkraft.aktuell">
+				<anchored>
+					<to>attributframe</to>
+					<position>insidetopleft</position>
+					<offset>365,33</offset>
+				</anchored>
+				<tabtarget>
+					<next>strengthdamage</next>
+					<prev>size</prev>
+				</tabtarget>				
+			</abilityscore>	
+			<abilitylabel>
+				<anchored>
+					<to>koerperkraft</to>
+					<position>aboveleft</position>
+					<offset>10,0</offset>
+				</anchored>			
+				<static>Kk</static>
+			</abilitylabel>				
+		</sheetdata>			
+	</windowclass>
+	
+	<windowclass name="charsheet_skilllistitem_normal">
+		<sizelimits>
+			<minimum>
+				<height>18</height>
+			</minimum>
+		</sizelimits>		
+		<sheetdata>
+			<stringfield name="label">
+				<anchored>
+					<left>
+						<anchor>left</anchor>
+						<offset>2</offset>
+					</left>				
+					<top>
+						<anchor>top</anchor>
+						<offset>2</offset>
+					</top>
+					<size>
+						<width>120</width>
+					</size>
+				</anchored>
+				<font>sheetlabelsmall</font>
+				<frame>
+					<name>textline</name>
+					<offset>0,5,0,0</offset>
+				</frame>
+			</stringfield>	
+			
+			<stringfield name="probe">
+				<anchored>
+					<left>
+						<parent>label</parent>						
+						<anchor>left</anchor>
+						<offset>125</offset>
+					</left>				
+					<top>
+						<parent>label</parent>						
+						<anchor>top</anchor>
+						<offset>0</offset>
+					</top>
+					<size>
+						<width>50</width>
+					</size>
+				</anchored>
+				<font>sheetlabelsmall</font>
+				<center/>
+				<frame>
+					<name>textline</name>
+					<offset>0,5,0,0</offset>
+				</frame>
+				<script file="campaign/scripts/char_skilllistitem_probe.lua"/>
+			</stringfield>	
+			
+			<stringfield name="wert">
+				<anchored>
+					<left>
+						<parent>probe</parent>						
+						<anchor>left</anchor>
+						<offset>55</offset>
+					</left>				
+					<top>
+						<parent>probe</parent>						
+						<anchor>top</anchor>
+						<offset>0</offset>
+					</top>
+					<size>
+						<width>30</width>
+					</size>
+				</anchored>
+				<font>sheetlabelsmallbold</font>
+				<center/>
+				<frame>
+					<name>textline</name>
+					<offset>0,5,0,0</offset>
+				</frame>
+			</stringfield>				
+		</sheetdata>
+	</windowclass>	
+	
+	<windowclass name="charsheet_skilllistitem_koerper">
+		<sizelimits>
+			<minimum>
+				<height>18</height>
+			</minimum>
+		</sizelimits>		
+		<sheetdata>
+			<stringfield name="label">
+				<anchored>
+					<left>
+						<anchor>left</anchor>
+						<offset>2</offset>
+					</left>				
+					<top>
+						<anchor>top</anchor>
+						<offset>2</offset>
+					</top>
+					<size>
+						<width>90</width>
+					</size>
+				</anchored>
+				<font>sheetlabelsmall</font>
+				<frame>
+					<name>textline</name>
+					<offset>0,5,0,0</offset>
+				</frame>
+			</stringfield>	
+			
+			<stringfield name="ebe">
+				<anchored>
+					<left>
+						<parent>label</parent>						
+						<anchor>left</anchor>
+						<offset>95</offset>
+					</left>				
+					<top>
+						<parent>label</parent>						
+						<anchor>top</anchor>
+						<offset>0</offset>
+					</top>
+					<size>
+						<width>30</width>
+					</size>
+				</anchored>
+				<font>sheetlabelsmall</font>
+				<center/>				
+				<frame>
+					<name>textline</name>
+					<offset>0,5,0,0</offset>
+				</frame>
+			</stringfield>				
+			
+			<stringfield name="probe">
+				<anchored>
+					<left>
+						<parent>ebe</parent>						
+						<anchor>left</anchor>
+						<offset>35</offset>
+					</left>				
+					<top>
+						<parent>ebe</parent>						
+						<anchor>top</anchor>
+						<offset>0</offset>
+					</top>
+					<size>
+						<width>50</width>
+					</size>
+				</anchored>
+				<font>sheetlabelsmall</font>
+				<center/>
+				<frame>
+					<name>textline</name>
+					<offset>0,5,0,0</offset>
+				</frame>
+				<script file="campaign/scripts/char_skilllistitem_probe.lua"/>
+			</stringfield>	
+			
+			<stringfield name="wert">
+				<anchored>
+					<left>
+						<parent>probe</parent>						
+						<anchor>left</anchor>
+						<offset>55</offset>
+					</left>				
+					<top>
+						<parent>probe</parent>						
+						<anchor>top</anchor>
+						<offset>0</offset>
+					</top>
+					<size>
+						<width>30</width>
+					</size>
+				</anchored>
+				<font>sheetlabelsmallbold</font>
+				<center/>
+				<frame>
+					<name>textline</name>
+					<offset>0,5,0,0</offset>
+				</frame>
+			</stringfield>				
+		</sheetdata>
+	</windowclass>		
+
+
+	<windowclass name="charsheet_skilllistitem_kampf">
+		<sizelimits>
+			<minimum>
+				<height>18</height>
+			</minimum>
+		</sizelimits>		
+		<sheetdata>
+			<stringfield name="label">
+				<anchored>
+					<left>
+						<anchor>left</anchor>
+						<offset>2</offset>
+					</left>				
+					<top>
+						<anchor>top</anchor>
+						<offset>2</offset>
+					</top>
+					<size>
+						<width>90</width>
+					</size>
+				</anchored>
+				<font>sheetlabelsmall</font>
+				<frame>
+					<name>textline</name>
+					<offset>0,5,0,0</offset>
+				</frame>
+			</stringfield>	
+			
+			<stringfield name="ebe">
+				<anchored>
+					<left>
+						<parent>label</parent>						
+						<anchor>left</anchor>
+						<offset>95</offset>
+					</left>				
+					<top>
+						<parent>label</parent>						
+						<anchor>top</anchor>
+						<offset>0</offset>
+					</top>
+					<size>
+						<width>30</width>
+					</size>
+				</anchored>
+				<font>sheetlabelsmall</font>
+				<center/>				
+				<frame>
+					<name>textline</name>
+					<offset>0,5,0,0</offset>
+				</frame>
+			</stringfield>				
+			
+			<stringfield name="atpa">
+				<anchored>
+					<left>
+						<parent>ebe</parent>						
+						<anchor>left</anchor>
+						<offset>35</offset>
+					</left>				
+					<top>
+						<parent>ebe</parent>						
+						<anchor>top</anchor>
+						<offset>0</offset>
+					</top>
+					<size>
+						<width>40</width>
+					</size>
+				</anchored>
+				<font>sheetlabelsmall</font>
+				<center/>
+				<frame>
+					<name>textline</name>
+					<offset>0,5,0,0</offset>
+				</frame>
+			</stringfield>	
+			
+			<stringfield name="wert">
+				<anchored>
+					<left>
+						<parent>atpa</parent>						
+						<anchor>left</anchor>
+						<offset>45</offset>
+					</left>				
+					<top>
+						<parent>atpa</parent>						
+						<anchor>top</anchor>
+						<offset>0</offset>
+					</top>
+					<size>
+						<width>30</width>
+					</size>
+				</anchored>
+				<font>sheetlabelsmallbold</font>
+				<center/>
+				<frame>
+					<name>textline</name>
+					<offset>0,5,0,0</offset>
+				</frame>
+			</stringfield>				
+		</sheetdata>
+	</windowclass>	
+
+
+	<windowclass name="charsheet_skilllistitem_sprache">
+		<sizelimits>
+			<minimum>
+				<height>18</height>
+			</minimum>
+		</sizelimits>		
+		<sheetdata>
+			<stringfield name="label">
+				<anchored>
+					<left>
+						<anchor>left</anchor>
+						<offset>2</offset>
+					</left>				
+					<top>
+						<anchor>top</anchor>
+						<offset>2</offset>
+					</top>
+					<size>
+						<width>90</width>
+					</size>
+				</anchored>
+				<font>sheetlabelsmall</font>
+				<frame>
+					<name>textline</name>
+					<offset>0,5,0,0</offset>
+				</frame>
+			</stringfield>	
+			
+			<stringfield name="komplexitaet">
+				<anchored>
+					<left>
+						<parent>label</parent>						
+						<anchor>left</anchor>
+						<offset>95</offset>
+					</left>				
+					<top>
+						<parent>label</parent>						
+						<anchor>top</anchor>
+						<offset>0</offset>
+					</top>
+					<size>
+						<width>30</width>
+					</size>
+				</anchored>
+				<font>sheetlabelsmall</font>
+				<center/>				
+				<frame>
+					<name>textline</name>
+					<offset>0,5,0,0</offset>
+				</frame>
+			</stringfield>				
+			
+			<stringfield name="probe">
+				<anchored>
+					<left>
+						<parent>komplexitaet</parent>						
+						<anchor>left</anchor>
+						<offset>35</offset>
+					</left>				
+					<top>
+						<parent>komplexitaet</parent>						
+						<anchor>top</anchor>
+						<offset>0</offset>
+					</top>
+					<size>
+						<width>50</width>
+					</size>
+				</anchored>
+				<font>sheetlabelsmall</font>
+				<center/>
+				<frame>
+					<name>textline</name>
+					<offset>0,5,0,0</offset>
+				</frame>
+				<script file="campaign/scripts/char_skilllistitem_probe.lua"/>
+			</stringfield>	
+			
+			<stringfield name="wert">
+				<anchored>
+					<left>
+						<parent>probe</parent>						
+						<anchor>left</anchor>
+						<offset>55</offset>
+					</left>				
+					<top>
+						<parent>probe</parent>						
+						<anchor>top</anchor>
+						<offset>0</offset>
+					</top>
+					<size>
+						<width>30</width>
+					</size>
+				</anchored>
+				<font>sheetlabelsmallbold</font>
+				<center/>
+				<frame>
+					<name>textline</name>
+					<offset>0,5,0,0</offset>
+				</frame>
+			</stringfield>				
+		</sheetdata>
+	</windowclass>		
+</root>
